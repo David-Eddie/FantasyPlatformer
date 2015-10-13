@@ -7,7 +7,32 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_terrain</sprite>
+    <sprite>sprites\spr_ships_wheel</sprite>
+    <sprite>sprites\spr_mast</sprite>
+    <sprite>sprites\spr_wood_floor</sprite>
+    <sprite>sprites\spr_column</sprite>
+    <sprite>sprites\spr_brick_floor</sprite>
+    <sprite>sprites\spr_brick_wall</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_lava</sprite>
+    <sprite>sprites\spr_dungeon</sprite>
+    <sprite>sprites\spr_stone_wall</sprite>
+    <sprite>sprites\spr_rocks</sprite>
+    <sprite>sprites\spr_pool_corner</sprite>
+    <sprite>sprites\spr_mountains</sprite>
+    <sprite>sprites\spr_hills</sprite>
+    <sprite>sprites\spr_trees</sprite>
+    <sprite>sprites\spr_bushes</sprite>
+    <sprite>sprites\spr_grass</sprite>
+    <sprite>sprites\spr_swamp</sprite>
+    <sprite>sprites\spr_water</sprite>
     <sprite>sprites\spr_buildings</sprite>
+    <sprite>sprites\spr_stonehenge</sprite>
+    <sprite>sprites\spr_ruins</sprite>
+    <sprite>sprites\spr_castle</sprite>
+    <sprite>sprites\spr_village</sprite>
+    <sprite>sprites\spr_keep</sprite>
+    <sprite>sprites\spr_city</sprite>
     <sprite>sprites\spr_mage</sprite>
     <sprite>sprites\spr_rogue</sprite>
     <sprite>sprites\spr_fighter</sprite>
@@ -74,10 +99,34 @@
     <sprite>sprites\spr_dragon</sprite>
     <sprite>sprites\spr_blue_devil</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_grass</background>
+    <background>background\bg_red_brick</background>
+    <background>background\bg_magenta_brick</background>
+    <background>background\bg_wood</background>
+    <background>background\bg_clear_terrain</background>
+  </backgrounds>
   <paths name="paths"/>
-  <objects name="objects"/>
-  <rooms name="rooms"/>
+  <scripts name="scripts">
+    <script>scripts\scr_gamestate_pc_action.gml</script>
+    <script>scripts\scr_gamestate_npc_action.gml</script>
+    <script>scripts\scr_gamestate_effect_action.gml</script>
+    <script>scripts\scr_get_adjacent_squares.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\obj_wall_brick</object>
+    <object>objects\obj_ranger</object>
+    <object>objects\obj_character</object>
+    <object>objects\obj_pc</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_orc</object>
+    <object>objects\obj_npc</object>
+    <object>objects\obj_enemy</object>
+    <object>objects\obj_engine</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_test</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
