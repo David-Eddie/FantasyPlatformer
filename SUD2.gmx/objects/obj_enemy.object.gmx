@@ -101,6 +101,8 @@ if (global.gamestate == gamestates.npc_action) {
           <argument>
             <kind>1</kind>
             <string>/// AI code
+
+
 // locate pc
 var pc = instance_nearest(x, y, obj_pc);
 var dx = pc.x - x;
@@ -115,7 +117,7 @@ if (abs(dx) &gt; sprite_width || abs(dy) &gt; sprite_width) {
     y += y_dir * sprite_width;
 }
 
-global.gamestate = gamestates.pc_action;
+
 </string>
           </argument>
         </arguments>

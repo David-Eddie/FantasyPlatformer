@@ -32,6 +32,7 @@
 };
 
 global.gamestate = gamestates.pc_action;
+
 </string>
           </argument>
         </arguments>
