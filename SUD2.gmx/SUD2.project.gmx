@@ -107,25 +107,19 @@
     <background>background\bg_clear_terrain</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts">
-    <script>scripts\scr_gamestate_pc_action.gml</script>
-    <script>scripts\scr_gamestate_npc_action.gml</script>
-    <script>scripts\scr_gamestate_effect_action.gml</script>
-    <script>scripts\scr_get_adjacent_squares.gml</script>
-  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_ui</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_wall_brick</object>
-    <object>objects\obj_ranger</object>
-    <object>objects\obj_character</object>
-    <object>objects\obj_pc</object>
     <object>objects\obj_wall</object>
-    <object>objects\obj_orc</object>
-    <object>objects\obj_npc</object>
+    <object>objects\obj_hero</object>
     <object>objects\obj_enemy</object>
-    <object>objects\obj_engine</object>
+    <object>objects\obj_ui</object>
+    <object>objects\obj_pc_attack</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_test</room>
+    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
