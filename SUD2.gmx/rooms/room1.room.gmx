@@ -187,7 +187,11 @@
     <instance objName="obj_wall_brick" x="736" y="640" name="inst_9D171A51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hero" x="448" y="480" name="inst_DBFC90DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy" x="160" y="608" name="inst_BE972107" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ui" x="256" y="384" name="inst_E6702ED2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ui" x="896" y="160" name="inst_E6702ED2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ladder" x="576" y="544" name="inst_B3AD08AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ladder" x="576" y="576" name="inst_2C5D19FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ladder" x="576" y="608" name="inst_C36F5A5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_brick" x="224" y="544" name="inst_5D08316F" locked="0" code="path_start(path0,5,3,false);&#xA;" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

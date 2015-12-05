@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_hit</sound>
+    <sound>sound\snd_swing</sound>
+    <sound>sound\snd_hit_hero</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_terrain</sprite>
     <sprite>sprites\spr_ships_wheel</sprite>
@@ -98,6 +102,7 @@
     <sprite>sprites\spr_hydra</sprite>
     <sprite>sprites\spr_dragon</sprite>
     <sprite>sprites\spr_blue_devil</sprite>
+    <sprite>sprites\spr_ladder</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -106,7 +111,9 @@
     <background>background\bg_wood</background>
     <background>background\bg_clear_terrain</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path0</path>
+  </paths>
   <fonts name="fonts">
     <font>fonts\fnt_ui</font>
   </fonts>
@@ -117,6 +124,10 @@
     <object>objects\obj_enemy</object>
     <object>objects\obj_ui</object>
     <object>objects\obj_pc_attack</object>
+    <object>objects\obj_hit</object>
+    <object>objects\obj_hit_hero</object>
+    <object>objects\obj_ladder</object>
+    <object>objects\obj_moving_platform</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

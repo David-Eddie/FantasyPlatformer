@@ -74,6 +74,10 @@ if(obj_hero.y &gt; y - 32 &amp;&amp; obj_hero.y &lt; y + 32){
 if(abs(x - obj_hero.x) == 32 &amp;&amp; obj_hero.y == y){
     var hit = random(100);
     if(hit &lt;= 2){
+        with(obj_hero){
+            //Trigger hit sound in hero
+            event_user(0);
+        }
         obj_hero.current_hp-=1;
     }
 }

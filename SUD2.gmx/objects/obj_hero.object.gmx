@@ -35,6 +35,7 @@ MAX_HP = 5;
 current_hp = MAX_HP;
 dir_x = 1;
 can_attack = true;
+on_ladder = false;
 </string>
           </argument>
         </arguments>
@@ -94,6 +95,7 @@ if(keyboard_check_pressed(vk_control) &amp;&amp; can_attack){
     attack.dir_x = dir_x;
     can_attack = false;
     alarm[0] = room_speed;
+    audio_play_sound(snd_swing,10,false);
 }
 </string>
           </argument>
@@ -150,32 +152,10 @@ x += h_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Vertical Movement Control
-
-/*
-var key_right = keyboard_check(vk_right);
-var key_left = -keyboard_check(vk_left);
-var move = key_right + key_left;
-*/
-
-var key_jump = keyboard_check_pressed(vk_space);
-
-if(place_meeting(x,y+1,obj_wall)){
-    v_speed = key_jump * (-JUMP_SPEED);
+            <string>///Check Health
+if(current_hp &lt;= 0){
+    instance_destroy();
 }
-
-if(v_speed &lt; 11 * GRAVITY){
-    v_speed += GRAVITY;
-}
-
-if(place_meeting(x,y+v_speed,obj_wall)||place_meeting(x,y+v_speed,obj_enemy)){
-    while(!place_meeting(x,y+sign(v_speed),obj_wall)&amp;&amp;!place_meeting(x,y+sign(v_speed),obj_enemy)){
-        y += sign(v_speed);
-    }
-    v_speed = 0;
-}
-
-y += v_speed;
 </string>
           </argument>
         </arguments>
@@ -196,10 +176,105 @@ y += v_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Check Health
-if(current_hp &lt;= 0){
-    instance_destroy();
+            <string>///Reset Ladder State
+on_ladder = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Vertical Movement Control
+
+/*
+var key_right = keyboard_check(vk_right);
+var key_left = -keyboard_check(vk_left);
+var move = key_right + key_left;
+*/
+
+var key_jump = keyboard_check_pressed(vk_space);
+var key_up = -keyboard_check(vk_up);
+var key_down = keyboard_check(vk_down);
+
+//Jumping
+//Can only jump when on a wall object
+if(place_meeting(x,y+1,obj_wall)){
+    v_speed = key_jump * (-JUMP_SPEED);
 }
+
+//Gravity
+if(v_speed &lt; 11 * GRAVITY){
+    v_speed += GRAVITY;
+}
+
+//Ladders
+if(key_down&gt;0&amp;&amp;place_meeting(x,y+1,obj_ladder)){
+    on_ladder = true;
+}
+if(place_meeting(x,y,obj_ladder)){
+    on_ladder = true;
+}
+if(place_meeting(x,y+v_speed,obj_ladder)){
+    while(!place_meeting(x,y+sign(v_speed),obj_ladder)){
+        y += sign(v_speed);
+    }
+    v_speed = 0;
+}
+if(on_ladder){
+    v_speed = (key_up + key_down)*MOVEMENT_SPEED;
+}
+
+
+//Collision with wall or enemy
+if(place_meeting(x,y+v_speed,obj_wall)||
+   place_meeting(x,y+v_speed,obj_enemy)){
+    while(!place_meeting(x,y+sign(v_speed),obj_wall)&amp;&amp;
+          !place_meeting(x,y+sign(v_speed),obj_enemy)){
+        y += sign(v_speed);
+    }
+    v_speed = 0;
+}
+
+//Move vertically
+y += v_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hero Takes a Hit
+instance_create(x,y,obj_hit_hero);
 </string>
           </argument>
         </arguments>

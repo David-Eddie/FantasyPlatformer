@@ -1,0 +1,37 @@
+UI
+-Health/Exp/Mana bars
+-Equipment
+-Pause/Menu Screen
+-Save/Load
+-New Game/Character Creation
+
+Leveling System
+-Stats
+-Magic/Abilities
+
+Combat System
+-Stats
+
+Story
+-Add Monsters
+-Objective
+-Quests/Progression
+
+Inventory
+-Treasure
+
+Maps*
+-MapTransitions
+X-Climbing*
+-Elevators*
+--Move hero with elevator
+-Traps
+-Secrets
+-Puzzles
+--Switches
+--Interactivity
+
+Town
+-Shops
+-Npcs
+-Dialog
