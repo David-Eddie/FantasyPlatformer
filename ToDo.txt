@@ -22,9 +22,10 @@ Inventory
 
 Maps*
 -MapTransitions
-X-Climbing*
+X-Climbing
 -Elevators*
 --Move hero with elevator
+X--Relative Coordinates
 -Traps
 -Secrets
 -Puzzles
