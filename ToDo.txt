@@ -25,6 +25,8 @@ Maps*
 X-Climbing
 -Elevators*
 --Move hero with elevator
+**Need to code the path ourselves, colision detection is not working
+  Maybe order of events is out of syncs- path moving platform after the collision detection?
 X--Relative Coordinates
 -Traps
 -Secrets

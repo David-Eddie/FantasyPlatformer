@@ -28,6 +28,35 @@
             <string>image_speed = 0;
 image_index = 0;
 container = room;
+start_x = x;
+start_y = y;
+my_path = path0;
+my_speed = 5;
+my_endaction = path_action_reverse;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>dx = 0;
+dy = 0;
+prev_x = x;
+prev_y = y;
 </string>
           </argument>
         </arguments>
@@ -50,13 +79,27 @@ container = room;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Marry to Container
+            <string>///Handle Passengers
+if(keyboard_check(vk_return)){
+    var debugger  = true;
+}
+dx = x - prev_x;
+dy = y - prev_y;
+
+prev_x = x;
+prev_y = y;
+
 if(place_meeting(x,y,obj_container)){
     container = instance_place(x,y,obj_container);
 }
 
 if(!instance_exists(container)){
     container = room;
+}
+
+if(x = start_x &amp;&amp; y = start_y){
+    path_end();
+    path_start(my_path,my_speed,my_endaction,false);
 }
 </string>
           </argument>
@@ -80,9 +123,16 @@ if(!instance_exists(container)){
             <kind>1</kind>
             <string>///Collision Detection
 
+if(place_meeting(x,y-1,obj_hero)){
+    var hero = instance_place(x,y-1,obj_hero)
+    hero.x += dx;
+    hero.y += dy;
+}
+
 if(place_meeting(x,y,obj_hero)){
     with(obj_hero){
-        move_outside_solid(point_direction(other.x,other.y,x,y),0);
+        var platform = instance_place(x,y,obj_moving_platform)
+        move_outside_solid(point_direction(platform.dx,platform.dy,0,0),0);
     }
 }
 </string>
@@ -107,8 +157,8 @@ if(place_meeting(x,y,obj_hero)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = container.x;
-y = container.y;
+            <string>//x = container.x;
+//y = container.y;
 draw_sprite(sprite_index,image_index,x,y);
 </string>
           </argument>
