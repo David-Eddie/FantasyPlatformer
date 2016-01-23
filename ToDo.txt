@@ -1,5 +1,6 @@
 UI
 -Health/Exp/Mana bars
+X--Enemy Health Bars
 -Equipment
 -Pause/Menu Screen
 -Save/Load
@@ -11,6 +12,7 @@ Leveling System
 
 Combat System
 -Stats
+-D20 System
 
 Story
 -Add Monsters
@@ -23,11 +25,9 @@ Inventory
 Maps*
 -MapTransitions
 X-Climbing
--Elevators*
---Move hero with elevator
-**Need to code the path ourselves, colision detection is not working
-  Maybe order of events is out of syncs- path moving platform after the collision detection?
-X--Relative Coordinates
+X-Elevators
+X--Move hero with elevator
+X--Relative Coordinates-Unecessary
 -Traps
 -Secrets
 -Puzzles

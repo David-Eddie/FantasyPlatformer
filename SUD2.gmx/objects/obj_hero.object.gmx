@@ -36,31 +36,15 @@ current_hp = MAX_HP;
 dir_x = 1;
 can_attack = true;
 on_ladder = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Container Variables
-container = room;
-old_container = container;
-relative_x = x;
-relative_y = y;
+
+//D20 numbers
+ac = 10;
+
+//Hero Targets
+var left_target = instance_create(x-sprite_width,y,obj_hero_target);
+var right_target = instance_create(x+sprite_width,y,obj_hero_target);
+left_target.offset_x = -sprite_width;
+right_target.offset_x = sprite_width;
 </string>
           </argument>
         </arguments>
@@ -115,72 +99,14 @@ if(keyboard_check(vk_right)){
     dir_x = 1;
 }
 
-if(keyboard_check_pressed(vk_control) &amp;&amp; can_attack){
-    var attack = instance_create(x,y,obj_pc_attack);
-    attack.dir_x = dir_x;
+if(keyboard_check_pressed(vk_control) &amp;&amp; can_attack &amp;&amp; instance_exists(obj_enemy)){
+    var attack = instance_create(x,y,obj_attack);
+    attack.dir_x = instance_nearest(x,y,obj_enemy).x - x;
+    attack.target = obj_enemy;
     can_attack = false;
     alarm[0] = room_speed;
     audio_play_sound(snd_swing,10,false);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Identify Container
-if(place_meeting(x,y,obj_container)){
-    container = instance_place(x,y,obj_container);
-}
-else{
-    container = room;
-}
-if(container != old_container){
-    relative_x = x - container.x;
-    relative_y = y - container.y;
-    old_container = container;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Define Relative Position
-
-x = container.x + relative_x;
-y = container.y + relative_y;
-
-relative_x = x - container.x;
-relative_y = y - container.y;
 </string>
           </argument>
         </arguments>
@@ -215,7 +141,7 @@ if(place_meeting(x+h_speed,y,obj_wall)||place_meeting(x+h_speed,y,obj_enemy)){
     h_speed = 0;
 }
 
-relative_x += h_speed;
+x += h_speed;
 </string>
           </argument>
         </arguments>
@@ -337,31 +263,7 @@ if(place_meeting(x,y+v_speed,obj_wall)||
 }
 
 //Move vertically
-relative_y += v_speed;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Hero Takes a Hit
-instance_create(x,y,obj_hit_hero);
+y += v_speed;
 </string>
           </argument>
         </arguments>
