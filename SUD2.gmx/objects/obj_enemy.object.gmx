@@ -33,6 +33,32 @@ v_speed = 0;
 JUMP_SPEED = 22;
 MAX_HP = 5;
 current_hp = MAX_HP;
+can_attack = true;
+ac = 10
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Attack Timer
+can_attack = true;
 </string>
           </argument>
         </arguments>
@@ -59,26 +85,31 @@ current_hp = MAX_HP;
 
 //If monster can see player on same horizontal level move towards player
 
+
+
 if(!instance_exists(obj_hero)){
     exit;
 }
 
 movement_direction = 0;
 
-if(obj_hero.y &gt; y - 32 &amp;&amp; obj_hero.y &lt; y + 32){
-    movement_direction = sign(obj_hero.x-x);
-}
+//Line of sight
 
-//If adjacent to hero randomly attack
+//var los = !collision_line(x+sprite_width/2,y+sprite_height/2, obj_hero.x+obj_hero.sprite_width/2, obj_hero.y+obj_hero.sprite_height/2, obj_wall,false,true);
+var los = !collision_line(x, y, obj_hero.x, obj_hero.y, obj_wall,false,true);
 
-if(abs(x - obj_hero.x) == 32 &amp;&amp; obj_hero.y == y){
-    var hit = random(100);
-    if(hit &lt;= 2){
-        with(obj_hero){
-            //Trigger hit sound in hero
-            event_user(0);
-        }
-        obj_hero.current_hp-=1;
+if(los) movement_direction = sign(instance_nearest(x,y,obj_hero_target).x-x);
+
+
+//If adjacent to hero Attack
+
+if(abs(x - obj_hero.x) &lt;= sprite_width &amp;&amp; obj_hero.y == y){
+    if(can_attack){
+        var attack = instance_create(x,y,obj_attack);
+        attack.target = obj_hero;
+        attack.dir_x = obj_hero.x-x;
+        can_attack = false;
+        alarm[0] = room_speed;
     }
 }
 </string>
@@ -197,6 +228,30 @@ x += h_speed;
 if(current_hp &lt;=0){
     instance_destroy();
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+draw_healthbar(x-sprite_width/2,y-sprite_height/2-4-3,x+sprite_width/2,y-sprite_height/2-4,current_hp/MAX_HP*100,c_black,c_red,c_red,0,false,false)
 </string>
           </argument>
         </arguments>

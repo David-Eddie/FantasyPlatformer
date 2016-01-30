@@ -103,6 +103,7 @@
     <sprite>sprites\spr_dragon</sprite>
     <sprite>sprites\spr_blue_devil</sprite>
     <sprite>sprites\spr_ladder</sprite>
+    <sprite>sprites\spr_container</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -114,6 +115,7 @@
   <paths name="paths">
     <path>paths\path0</path>
   </paths>
+  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\fnt_ui</font>
   </fonts>
@@ -123,11 +125,13 @@
     <object>objects\obj_hero</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_ui</object>
-    <object>objects\obj_pc_attack</object>
+    <object>objects\obj_attack</object>
     <object>objects\obj_hit</object>
     <object>objects\obj_hit_hero</object>
     <object>objects\obj_ladder</object>
     <object>objects\obj_moving_platform</object>
+    <object>objects\obj_path_target</object>
+    <object>objects\obj_hero_target</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

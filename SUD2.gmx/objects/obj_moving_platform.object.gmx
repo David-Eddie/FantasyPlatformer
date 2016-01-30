@@ -25,15 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start_x = x;
-start_y = y;
-my_path = 0;
-my_speed = 0;
-my_endaction = 0;
-image_speed = 0;
-image_index = 0;
-x_prev = x;
-y_prev = y;
+            <string>image_speed = 0;
+target = instance_nearest(x,y,obj_path_target);
 </string>
           </argument>
         </arguments>
@@ -56,56 +49,56 @@ y_prev = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(x = start_x &amp;&amp; y = start_y){
-    path_end();
-    path_start(my_path,my_speed,my_endaction,false);
+            <string>//Fix coordinates to screen coordinates
+if(x mod 1 &gt; 0.5) x = ceil(x); else x = floor(x);
+if(y mod 1 &gt; 0.5) y = ceil(y); else y = floor(y);
+with(obj_hero){
+    if(x mod 1 &gt; 0.5) x = ceil(x); else x = floor(x);
+    if(y mod 1 &gt; 0.5) y = ceil(y); else y = floor(y);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Collision
-var dx = x - x_prev;
-var dy = y - y_prev;
+//Test for passenger
+var passenger = noone;
+var rx = 0;
+var ry = 0;
+var dx = 0;
+var dy = 0;
+var ux = 0;
+var uy = 0;
 
-/**
-//Moving Platforms
-if position_meeting(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_moving_platform)
-{
-  objID = instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_moving_platform)
-  v_speed = objID.vspeed;
-  move_outside_solid(90,sprite_height);
+if(place_meeting(x,y-1,obj_hero)){
+    passenger = instance_place(x,y-1,obj_hero);
+    rx = passenger.x - x;
+    ry = passenger.y - y;
 }
-*/
 
-passenger = instance_place(x,y-1,obj_hero);
-if(passenger &gt; 0){
-    passenger.x += dx;
+//Calculate Displacement Vector
+dx = target.x - x;
+dy = target.y - y;
+
+//Calculate Unit Vector
+var magnitude = sqrt(dx * dx + dy * dy);
+if(magnitude &gt; 0){
+    ux = dx/magnitude;
+    uy = dy/magnitude;
+}
+
+//Follow Target
+while((abs(target.x - x) &gt;= 1)||(abs(target.y - y) &gt;= 1)){
+    x += ux;
+    y += uy;
     while(place_meeting(x,y,obj_hero)){
-        with(obj_hero){
-            y--;
-        }
+        var obstruction = instance_place(x,y,obj_hero);
+        obstruction.x += ux;
+        obstruction.y += uy;
     }
 }
 
-x_prev = x;
-y_prev = y;
+//Reposition Passenger
+if(passenger != noone){
+    passenger.x = x + rx;
+    passenger.y = y + ry;
+}
+
 </string>
           </argument>
         </arguments>
