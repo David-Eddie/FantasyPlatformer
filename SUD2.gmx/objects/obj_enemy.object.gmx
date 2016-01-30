@@ -35,12 +35,13 @@ MAX_HP = 5;
 current_hp = MAX_HP;
 can_attack = true;
 ac = 10
+attack_timer = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -57,14 +58,12 @@ ac = 10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Attack Timer
-can_attack = true;
+            <string>///Pause
+if(global.pause) exit;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -109,7 +108,14 @@ if(abs(x - obj_hero.x) &lt;= sprite_width &amp;&amp; obj_hero.y == y){
         attack.target = obj_hero;
         attack.dir_x = obj_hero.x-x;
         can_attack = false;
-        alarm[0] = room_speed;
+        attack_timer = room_speed;
+    }
+}
+
+if(attack_timer &gt; 0){
+    attack_timer--;
+    if(attack_timer == 0){
+        can_attack = true;
     }
 }
 </string>
