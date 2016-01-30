@@ -10,99 +10,108 @@
     <sound>sound\snd_hit_hero</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_terrain</sprite>
-    <sprite>sprites\spr_ships_wheel</sprite>
-    <sprite>sprites\spr_mast</sprite>
-    <sprite>sprites\spr_wood_floor</sprite>
-    <sprite>sprites\spr_column</sprite>
-    <sprite>sprites\spr_brick_floor</sprite>
-    <sprite>sprites\spr_brick_wall</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_lava</sprite>
-    <sprite>sprites\spr_dungeon</sprite>
-    <sprite>sprites\spr_stone_wall</sprite>
-    <sprite>sprites\spr_rocks</sprite>
-    <sprite>sprites\spr_pool_corner</sprite>
-    <sprite>sprites\spr_mountains</sprite>
-    <sprite>sprites\spr_hills</sprite>
-    <sprite>sprites\spr_trees</sprite>
-    <sprite>sprites\spr_bushes</sprite>
-    <sprite>sprites\spr_grass</sprite>
-    <sprite>sprites\spr_swamp</sprite>
-    <sprite>sprites\spr_water</sprite>
-    <sprite>sprites\spr_buildings</sprite>
-    <sprite>sprites\spr_stonehenge</sprite>
-    <sprite>sprites\spr_ruins</sprite>
-    <sprite>sprites\spr_castle</sprite>
-    <sprite>sprites\spr_village</sprite>
-    <sprite>sprites\spr_keep</sprite>
-    <sprite>sprites\spr_city</sprite>
-    <sprite>sprites\spr_mage</sprite>
-    <sprite>sprites\spr_rogue</sprite>
-    <sprite>sprites\spr_fighter</sprite>
-    <sprite>sprites\spr_druid</sprite>
-    <sprite>sprites\spr_tinker</sprite>
-    <sprite>sprites\spr_paladin</sprite>
-    <sprite>sprites\spr_ranger</sprite>
-    <sprite>sprites\spr_shepherd</sprite>
-    <sprite>sprites\spr_guard</sprite>
-    <sprite>sprites\spr_citizen</sprite>
-    <sprite>sprites\spr_bard</sprite>
-    <sprite>sprites\spr_jester</sprite>
-    <sprite>sprites\spr_beggar</sprite>
-    <sprite>sprites\spr_child</sprite>
-    <sprite>sprites\spr_bull</sprite>
-    <sprite>sprites\spr_lord</sprite>
-    <sprite>sprites\spr_horse</sprite>
-    <sprite>sprites\spr_bridge</sprite>
-    <sprite>sprites\spr_ship</sprite>
-    <sprite>sprites\spr_letters</sprite>
-    <sprite>sprites\spr_blank</sprite>
-    <sprite>sprites\spr_balloon</sprite>
-    <sprite>sprites\spr_hero</sprite>
-    <sprite>sprites\spr_props</sprite>
-    <sprite>sprites\spr_chest</sprite>
-    <sprite>sprites\spr_door</sprite>
-    <sprite>sprites\spr_moongate</sprite>
-    <sprite>sprites\spr_field</sprite>
+    <sprites name="Menu">
+      <sprite>sprites\spr_menu</sprite>
+      <sprite>sprites\spr_button_character</sprite>
+      <sprite>sprites\spr_open_book_bg</sprite>
+    </sprites>
+    <sprites name="Terrain">
+      <sprite>sprites\spr_terrain</sprite>
+      <sprite>sprites\spr_ladder</sprite>
+      <sprite>sprites\spr_ships_wheel</sprite>
+      <sprite>sprites\spr_mast</sprite>
+      <sprite>sprites\spr_wood_floor</sprite>
+      <sprite>sprites\spr_bridge</sprite>
+      <sprite>sprites\spr_column</sprite>
+      <sprite>sprites\spr_brick_floor</sprite>
+      <sprite>sprites\spr_brick_wall</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_lava</sprite>
+      <sprite>sprites\spr_dungeon</sprite>
+      <sprite>sprites\spr_rocks</sprite>
+      <sprite>sprites\spr_stone_wall</sprite>
+      <sprite>sprites\spr_grass</sprite>
+      <sprite>sprites\spr_pool_corner</sprite>
+      <sprite>sprites\spr_mountains</sprite>
+      <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\spr_stonehenge</sprite>
+      <sprite>sprites\spr_buildings</sprite>
+      <sprite>sprites\spr_ruins</sprite>
+      <sprite>sprites\spr_castle</sprite>
+      <sprite>sprites\spr_village</sprite>
+      <sprite>sprites\spr_keep</sprite>
+      <sprite>sprites\spr_city</sprite>
+      <sprite>sprites\spr_swamp</sprite>
+      <sprite>sprites\spr_hills</sprite>
+      <sprite>sprites\spr_trees</sprite>
+      <sprite>sprites\spr_chest</sprite>
+      <sprite>sprites\spr_bushes</sprite>
+      <sprite>sprites\spr_letters</sprite>
+      <sprite>sprites\spr_balloon</sprite>
+      <sprite>sprites\spr_props</sprite>
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_moongate</sprite>
+      <sprite>sprites\spr_field</sprite>
+      <sprite>sprites\spr_blank</sprite>
+    </sprites>
+    <sprites name="Characters">
+      <sprite>sprites\spr_bat</sprite>
+      <sprite>sprites\spr_dragon</sprite>
+      <sprite>sprites\spr_slime</sprite>
+      <sprite>sprites\spr_horse</sprite>
+      <sprite>sprites\spr_child</sprite>
+      <sprite>sprites\spr_ranger</sprite>
+      <sprite>sprites\spr_tinker</sprite>
+      <sprite>sprites\spr_paladin</sprite>
+      <sprite>sprites\spr_fighter</sprite>
+      <sprite>sprites\spr_citizen</sprite>
+      <sprite>sprites\spr_mage</sprite>
+      <sprite>sprites\spr_druid</sprite>
+      <sprite>sprites\spr_shepherd</sprite>
+      <sprite>sprites\spr_lord</sprite>
+      <sprite>sprites\spr_rogue</sprite>
+      <sprite>sprites\spr_bard</sprite>
+      <sprite>sprites\spr_guard</sprite>
+      <sprite>sprites\spr_beggar</sprite>
+      <sprite>sprites\spr_jester</sprite>
+      <sprite>sprites\spr_bull</sprite>
+      <sprite>sprites\spr_headless</sprite>
+      <sprite>sprites\spr_hero</sprite>
+      <sprite>sprites\spr_ship</sprite>
+      <sprite>sprites\spr_spider</sprite>
+      <sprite>sprites\spr_merman</sprite>
+      <sprite>sprites\spr_twister</sprite>
+      <sprite>sprites\spr_whirlpool</sprite>
+      <sprite>sprites\spr_pirate</sprite>
+      <sprite>sprites\spr_rat</sprite>
+      <sprite>sprites\spr_seaserpent</sprite>
+      <sprite>sprites\spr_troll</sprite>
+      <sprite>sprites\spr_octopus</sprite>
+      <sprite>sprites\spr_seahorse</sprite>
+      <sprite>sprites\spr_demon</sprite>
+      <sprite>sprites\spr_ghost</sprite>
+      <sprite>sprites\spr_kobold</sprite>
+      <sprite>sprites\spr_bandit</sprite>
+      <sprite>sprites\spr_phantom</sprite>
+      <sprite>sprites\spr_mimic</sprite>
+      <sprite>sprites\spr_xorn</sprite>
+      <sprite>sprites\spr_huorn</sprite>
+      <sprite>sprites\spr_giant</sprite>
+      <sprite>sprites\spr_swarm</sprite>
+      <sprite>sprites\spr_skeleton</sprite>
+      <sprite>sprites\spr_hydra</sprite>
+      <sprite>sprites\spr_orc</sprite>
+      <sprite>sprites\spr_beholder</sprite>
+      <sprite>sprites\spr_ettin</sprite>
+      <sprite>sprites\spr_lich</sprite>
+      <sprite>sprites\spr_wisp</sprite>
+      <sprite>sprites\spr_snake</sprite>
+      <sprite>sprites\spr_wizard</sprite>
+      <sprite>sprites\spr_red_devil</sprite>
+      <sprite>sprites\spr_blue_devil</sprite>
+    </sprites>
     <sprite>sprites\spr_missile</sprite>
     <sprite>sprites\spr_hit</sprite>
-    <sprite>sprites\spr_pirate</sprite>
-    <sprite>sprites\spr_merman</sprite>
-    <sprite>sprites\spr_octopus</sprite>
-    <sprite>sprites\spr_seaserpent</sprite>
-    <sprite>sprites\spr_seahorse</sprite>
-    <sprite>sprites\spr_whirlpool</sprite>
-    <sprite>sprites\spr_twister</sprite>
-    <sprite>sprites\spr_rat</sprite>
-    <sprite>sprites\spr_bat</sprite>
-    <sprite>sprites\spr_spider</sprite>
-    <sprite>sprites\spr_ghost</sprite>
-    <sprite>sprites\spr_slime</sprite>
-    <sprite>sprites\spr_troll</sprite>
-    <sprite>sprites\spr_kobold</sprite>
-    <sprite>sprites\spr_mimic</sprite>
-    <sprite>sprites\spr_huorn</sprite>
-    <sprite>sprites\spr_swarm</sprite>
-    <sprite>sprites\spr_beholder</sprite>
-    <sprite>sprites\spr_phantom</sprite>
-    <sprite>sprites\spr_orc</sprite>
-    <sprite>sprites\spr_skeleton</sprite>
-    <sprite>sprites\spr_bandit</sprite>
-    <sprite>sprites\spr_snake</sprite>
-    <sprite>sprites\spr_ettin</sprite>
-    <sprite>sprites\spr_headless</sprite>
-    <sprite>sprites\spr_giant</sprite>
-    <sprite>sprites\spr_wisp</sprite>
-    <sprite>sprites\spr_wizard</sprite>
-    <sprite>sprites\spr_lich</sprite>
-    <sprite>sprites\spr_demon</sprite>
-    <sprite>sprites\spr_xorn</sprite>
-    <sprite>sprites\spr_red_devil</sprite>
-    <sprite>sprites\spr_hydra</sprite>
-    <sprite>sprites\spr_dragon</sprite>
-    <sprite>sprites\spr_blue_devil</sprite>
-    <sprite>sprites\spr_ladder</sprite>
     <sprite>sprites\spr_container</sprite>
   </sprites>
   <backgrounds name="background">
@@ -115,9 +124,9 @@
   <paths name="paths">
     <path>paths\path0</path>
   </paths>
-  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\fnt_ui</font>
+    <font>fonts\fnt_char_stats_heading</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_wall_brick</object>
@@ -132,9 +141,14 @@
     <object>objects\obj_moving_platform</object>
     <object>objects\obj_path_target</object>
     <object>objects\obj_hero_target</object>
+    <object>objects\obj_pause</object>
+    <object>objects\obj_button_character</object>
+    <object>objects\obj_menu</object>
+    <object>objects\obj_char_stats</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
+    <room>rooms\room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
