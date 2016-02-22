@@ -1,8 +1,17 @@
+Working on the inventory, want moving things in the ui to be recorded
+in the chest object.
+
 UI
 -Health/Exp/Mana bars
 X--Enemy Health Bars
 -Equipment
+--Inventory
+X---Click and Drag
+X---Snap to Slots
 -Pause/Menu Screen
+--Buttons
+X--Pauses
+--Character Screen
 -Save/Load
 -New Game/Character Creation
 
@@ -21,8 +30,11 @@ Story
 
 Inventory
 -Treasure
+--Procedurally Generated Loot
+X--Openable Chests
+**Chest's Will Be Persistent
 
-Maps*
+Maps
 -MapTransitions
 X-Climbing
 X-Elevators

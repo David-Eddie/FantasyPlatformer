@@ -26,7 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Spawn Buttons
-instance_create(x-sprite_width/2+32,y-sprite_height/2+32,obj_button_character);
+var menu_margin = 32;
+
+instance_create(x-sprite_width/2+menu_margin,y-sprite_height/2+menu_margin,obj_button_character);
+instance_create(x-sprite_width/2+menu_margin,y-sprite_height/2+menu_margin + obj_button_character.sprite_height, obj_button_inventory);
 </string>
           </argument>
         </arguments>
@@ -49,7 +52,7 @@ instance_create(x-sprite_width/2+32,y-sprite_height/2+32,obj_button_character);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_button_character){
+            <string>with(obj_menu_button){
     instance_destroy();
 }
 </string>

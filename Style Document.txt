@@ -1,0 +1,6 @@
+Style Document
+
+Menu Buttons-
+-Lucida Calligraphy
+-Italic Bold
+-18pt

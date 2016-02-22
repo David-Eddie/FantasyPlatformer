@@ -13,7 +13,9 @@
     <sprites name="Menu">
       <sprite>sprites\spr_menu</sprite>
       <sprite>sprites\spr_button_character</sprite>
+      <sprite>sprites\spr_button_inventory</sprite>
       <sprite>sprites\spr_open_book_bg</sprite>
+      <sprite>sprites\spr_inventory_bg</sprite>
     </sprites>
     <sprites name="Terrain">
       <sprite>sprites\spr_terrain</sprite>
@@ -113,6 +115,10 @@
     <sprite>sprites\spr_missile</sprite>
     <sprite>sprites\spr_hit</sprite>
     <sprite>sprites\spr_container</sprite>
+    <sprite>sprites\spr_slot</sprite>
+    <sprite>sprites\spr_ragdoll</sprite>
+    <sprite>sprites\spr_chest_interface</sprite>
+    <sprite>sprites\spr_weapon</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -120,6 +126,7 @@
     <background>background\bg_magenta_brick</background>
     <background>background\bg_wood</background>
     <background>background\bg_clear_terrain</background>
+    <background>background\bg_book</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
@@ -143,12 +150,23 @@
     <object>objects\obj_hero_target</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_button_character</object>
+    <object>objects\obj_button_inventory</object>
     <object>objects\obj_menu</object>
-    <object>objects\obj_char_stats</object>
+    <object>objects\obj_menu_char_stats</object>
+    <object>objects\obj_menu_inventory</object>
+    <object>objects\obj_menu_button</object>
+    <object>objects\obj_slot</object>
+    <object>objects\obj_item</object>
+    <object>objects\obj_chest</object>
+    <object>objects\obj_interactable</object>
+    <object>objects\obj_chest_interface</object>
+    <object>objects\obj_weapon</object>
+    <object>objects\obj_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
-    <room>rooms\room2</room>
+    <room>rooms\inventory</room>
+    <room>rooms\ui</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

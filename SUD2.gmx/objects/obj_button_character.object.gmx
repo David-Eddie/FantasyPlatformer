@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-30</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_menu_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -50,7 +50,7 @@ image_speed =0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_char_stats){
+            <string>with(obj_menu_char_stats){
     instance_destroy();
 }
 </string>
@@ -125,7 +125,7 @@ image_speed =0;
 if(global.child_menu_exists){
     exit;
 }
-instance_create(0,0,obj_char_stats);
+instance_create(0,0,obj_menu_char_stats);
 </string>
           </argument>
         </arguments>
